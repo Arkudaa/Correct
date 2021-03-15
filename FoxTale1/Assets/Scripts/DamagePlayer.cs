@@ -20,7 +20,8 @@ public class DamagePlayer : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            FindObjectOfType<PlayerHealthController>().DealDamage();
+            //FindObjectOfType<PlayerHealthController>().DealDamage();
+            PlayerHealthController.instance.DealDamage();
         }
     }
 }

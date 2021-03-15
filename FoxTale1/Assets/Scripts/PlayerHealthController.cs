@@ -6,6 +6,12 @@ public class PlayerHealthController : MonoBehaviour
 {
     // Start is called before the first frame update
     public int currentHealth, maxHealth;
+    public static PlayerHealthController instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -20,10 +26,13 @@ public class PlayerHealthController : MonoBehaviour
     public void DealDamage()
     {
         currentHealth--;
+        UIController.instance.UpdateHealthDisplay();
         if (currentHealth <=0)
         {
             gameObject.SetActive(false);
         }
+
+
     }
 
 }
