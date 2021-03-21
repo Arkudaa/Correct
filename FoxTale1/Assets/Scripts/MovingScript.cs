@@ -24,7 +24,7 @@ public class MovingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundPoint.position, .2f, whatisGround);
+        isGrounded = Physics2D.OverlapCircle(groundPoint.position, .3f, whatisGround);
         rb.velocity = new Vector2(moveSpeed*Input.GetAxis("Horizontal"), rb.velocity.y);
         if (isGrounded)
         {
