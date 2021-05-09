@@ -30,8 +30,20 @@ public class PlayerHealthController : MonoBehaviour
         if (currentHealth <=0)
         {
             gameObject.SetActive(false);
+            LevelManager.instance.RespawnPlayer();
         }
 
+
+    }
+
+    public void Heal()
+    {
+        currentHealth++;
+        UIController.instance.UpdateHealthDisplay();
+        if(currentHealth>maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
 
     }
 

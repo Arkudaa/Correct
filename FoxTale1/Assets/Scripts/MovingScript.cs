@@ -13,6 +13,13 @@ public class MovingScript : MonoBehaviour
     private bool canDoubleJump;
     private Animator anim;
     private SpriteRenderer sr;
+    public float bounceForce;
+    public static MovingScript instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +27,13 @@ public class MovingScript : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
+
+    public void Bounce()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, bounceForce);
+    }
+
+
 
     // Update is called once per frame
     void Update()

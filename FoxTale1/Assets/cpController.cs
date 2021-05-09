@@ -6,6 +6,12 @@ public class cpController : MonoBehaviour
 {
     public static cpController instance;
     private checkpoint[] checkpoints;
+    public Vector3 spawnPoint;
+
+    public void SetSpawnPoint(Vector3 newSpawnPoint)
+    {
+        spawnPoint = newSpawnPoint;
+    }
 
     private void Awake()
     {

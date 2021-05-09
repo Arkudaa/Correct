@@ -33,6 +33,7 @@ public class checkpoint : MonoBehaviour
             //Debug.Log("It works!");
             cpController.instance.DeactivateCp();
             sr.sprite = cpOn;
+            cpController.instance.SetSpawnPoint(transform.position);
             
         }
 
